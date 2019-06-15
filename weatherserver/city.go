@@ -37,6 +37,35 @@ func cityswitch(city string) string {
 				break
 			}
 		}
+		if code != "" {
+			break
+		}
+	}
+	return code
+}
+
+func cityCatch(message string) string {
+	file, err := getCurrentPath()
+	check(err)
+	jsonStr, err := ioutil.ReadFile(file + "data/city.json")
+	check(err)
+	//解析JSON
+	byt := []byte(jsonStr)
+	var dat []map[string]string
+	if err := json.Unmarshal(byt, &dat); err != nil {
+		panic(err)
+	}
+	code := ""
+	for _, item := range dat {
+		for k, v := range item {
+			if strings.Index(message, v) >= 0 {
+				code = k
+				break
+			}
+		}
+		if code != "" {
+			break
+		}
 	}
 	return code
 }
