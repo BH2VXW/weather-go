@@ -1,0 +1,26 @@
+{
+	"update_id": 752378140,
+	"message": {
+		"message_id": 14,
+		"from": {
+			"id": 482376051,
+			"is_bot": false,
+			"first_name": "hongbai",
+			"username": "hongbai",
+			"language_code": "zh-hans"
+		},
+		"chat": {
+			"id": -395382635,
+			"title": "bot test",
+			"type": "group",
+			"all_members_are_administrators": true
+		},
+		"date": 1560608582,
+		"text": "/weather \u5927\u8fde\u5929\u6c14\u600e\u4e48\u6837",
+		"entities": [{
+			"offset": 0,
+			"length": 8,
+			"type": "bot_command"
+		}]
+	}
+}

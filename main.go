@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strings"
 
+	"./telegram"
 	"./weatherserver"
 )
 
@@ -24,9 +25,9 @@ func main() {
 
 func TelegramBot(w http.ResponseWriter, r *http.Request) {
 	body, _ := ioutil.ReadAll(r.Body)
-	body_str := string(body)
-	fmt.Println(body_str)
-
+	//body_str := string(body)
+	//fmt.Println(body_str)
+	telegram.Chat(body)
 	message := r.FormValue("message")
 	//检查是不是查天气
 	if strings.IndexAny(message, "天气") >= 0 {
